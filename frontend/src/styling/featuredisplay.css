@@ -1,0 +1,21 @@
+.feature-display {
+    background: #f9f9f9;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 16px;
+}
+
+.feature-display h3 {
+    margin-bottom: 12px;
+}
+
+.feature-list p {
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.feature-list strong {
+    color: #333;
+}
+

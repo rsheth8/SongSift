@@ -1,0 +1,54 @@
+/* ===== AUDIO FEATURE CHART COMPONENT ===== */
+.audio-feature-chart {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.chart-container {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    width: 100%;
+    height: 100%;
+}
+
+.chart-title {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--cyan-accent);
+    font-size: 1.2rem;
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.no-data-warning {
+    background: rgba(255, 193, 7, 0.1);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+    color: #ffc107;
+}
+
+.data-summary {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 16px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.custom-tooltip {
+    background-color: #2d2d2d;
+    border: 1px solid #6200ea;
+    border-radius: 8px;
+    padding: 10px;
+    color: #fff;
+}

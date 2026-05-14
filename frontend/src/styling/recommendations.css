@@ -1,0 +1,122 @@
+.recommendation-view {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+.recommendation-controls {
+    display: flex;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.seed-song {
+    flex: 1;
+    padding: var(--spacing-lg);
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recommendation-types {
+    flex: 1;
+    padding: var(--spacing-lg);
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recommendation-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.recommendation-buttons button {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--on-surface);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-sm);
+    transition: all 0.2s ease;
+}
+
+.recommendation-buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.recommendation-buttons button.active {
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+}
+
+.recommendations-list {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recommendations-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recommendation-item {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.recommendation-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.recommendation-cover {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--border-radius-sm);
+    object-fit: cover;
+    margin-right: var(--spacing-md);
+}
+
+.recommendation-info {
+    flex: 1;
+}
+
+.recommendation-info h3 {
+    margin: 0;
+    margin-bottom: var(--spacing-xs);
+}
+
+.recommendation-info p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.selected-recommendation {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+    display: block;
+    margin: var(--spacing-xl) auto 0;
+    background-color: transparent;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    padding: var(--spacing-sm) var(--spacing-xl);
+    border-radius: var(--border-radius-md);
+    transition: all 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: rgba(3, 218, 198, 0.1);
+}

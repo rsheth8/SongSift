@@ -1,0 +1,617 @@
+/* musicmap.css */
+:root {
+    --primary-color: #6200ea;
+    --secondary-color: #03dac6;
+    --background-color: #121212;
+    --surface-color: #1e1e1e;
+    --surface-light: #2d2d2d;
+    --error-color: #cf6679;
+    --on-primary: #ffffff;
+    --on-secondary: #000000;
+    --on-background: #ffffff;
+    --on-surface: #ffffff;
+    --on-error: #000000;
+}
+
+.music-map-explorer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    color: var(--on-background);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--background-color);
+}
+
+.explorer-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.explorer-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    color: var(--on-background);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Map Section */
+.map-section {
+    width: 100%;
+}
+
+.map-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.primary-button {
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.primary-button:hover:not(:disabled) {
+    background-color: #7c4dff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.primary-button:disabled {
+    background-color: #4b4b4b;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.secondary-button {
+    background-color: var(--secondary-color);
+    color: var(--on-secondary);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.secondary-button:hover:not(:disabled) {
+    background-color: #04f7e0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.secondary-button:disabled {
+    background-color: #4b4b4b;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.spinner {
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.music-map {
+    margin: 20px 0;
+    padding: 30px;
+    background-color: var(--surface-color);
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.music-map h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.music-map img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.map-stats {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.map-stats h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.stat-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+/* Path Finder Section */
+.path-finder-section {
+    width: 100%;
+}
+
+.path-finder-container {
+    background-color: var(--surface-color);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.path-finder-container h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+}
+
+.path-finder-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 1024px) {
+    .path-finder-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.path-controls-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.song-selectors {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.song-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.song-selector label {
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.song-selector select {
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--on-background);
+    font-size: 1rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+.song-selector select:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.path-options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.path-type-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.path-type-selector label {
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.path-type-selector select {
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--on-background);
+    font-size: 1rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+.min-path-length {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.min-path-length label {
+    font-weight: 500;
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.min-length-value {
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+
+.path-length-slider {
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    outline: none;
+}
+
+.path-length-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.path-length-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
+.slider-markers {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    padding: 0 5px;
+}
+
+.path-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.path-results-panel {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.path-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.path-header h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+}
+
+.path-info {
+    display: flex;
+    gap: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 8px;
+    flex-wrap: wrap;
+}
+
+.path-info-item {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.info-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.info-value {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.path-visualization {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.path-visualization img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.path-songs h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.path-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.path-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.path-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.path-item.active {
+    background-color: rgba(98, 0, 234, 0.2);
+    border-left: 3px solid var(--primary-color);
+}
+
+.path-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.path-song-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.path-song-info h4 {
+    margin: 0 0 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--on-background);
+}
+
+.path-song-info p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.path-player {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.path-player h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.back-button {
+    margin-top: 30px;
+    background-color: transparent;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.back-button:hover {
+    background-color: rgba(3, 218, 198, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .path-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .path-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .music-map, .path-finder-container {
+        padding: 20px 15px;
+    }
+}
+
+/* Custom scrollbar */
+.path-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.path-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.path-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.path-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Path Visualization Styles */
+.path-visualization {
+    margin: var(--spacing-lg) 0;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.path-visualization h4 {
+    margin: 0 0 var(--spacing-md) 0;
+    color: var(--cyan-accent);
+    font-size: 1.1rem;
+}
+
+.visualization-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-md);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.visualization-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-sm);
+}
+
+/* Loading state for visualization */
+.path-visualization.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+
+.path-visualization.loading::after {
+    content: 'Generating visualization...';
+    color: var(--subtle-gray);
+    font-style: italic;
+}

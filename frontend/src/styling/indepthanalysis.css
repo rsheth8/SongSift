@@ -1,0 +1,1403 @@
+/* ===== CSS VARIABLES ===== */
+:root {
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+    --border-radius-sm: 6px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 18px;
+    --border-radius-xl: 24px;
+
+    /* Studio Color Palette */
+    --deep-space-blue: #0B1426;
+    --electric-purple: #6366F1;
+    --cyan-accent: #06B6D4;
+    --warm-white: #F8FAFC;
+    --subtle-gray: #475569;
+    --glass-bg: rgba(248, 250, 252, 0.05);
+    --glass-border: rgba(248, 250, 252, 0.1);
+    --hover-overlay: rgba(248, 250, 252, 0.08);
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.25);
+    --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.3);
+
+    --glow-purple: 0 0 20px rgba(99, 102, 241, 0.3);
+    --glow-cyan: 0 0 20px rgba(6, 182, 212, 0.3);
+
+    /* ADD THESE DYNAMIC COLOR VARIABLES WITH DEFAULTS */
+    --dynamic-primary: 99, 102, 241;     /* Default to electric purple RGB */
+    --dynamic-secondary: 6, 182, 212;    /* Default to cyan accent RGB */
+    --dynamic-accent: 139, 92, 246;      /* Default to purple variant RGB */
+}
+
+
+/* ===============================================
+   MAIN LAYOUT CONTAINER
+   JSX: <div className="analysis-studio">
+   =============================================== */
+.analysis-studio {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--deep-space-blue) 0%, #1e293b 50%, #334155 100%);
+    color: var(--warm-white);
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ===============================================
+   ZONE 1: AUDIO CONTROL HUB (TOP 20%) - ENHANCED
+   JSX: <div className="audio-control-hub glassmorphism-enhanced">
+   =============================================== */
+/* ===============================================
+   ZONE 1: AUDIO CONTROL HUB (TOP 20%) - SUBTLE ENHANCED
+   JSX: <div className="audio-control-hub glassmorphism-enhanced">
+   =============================================== */
+.audio-control-hub.glassmorphism-enhanced {
+    height: 20vh;
+    min-height: 140px;
+    background: linear-gradient(135deg,
+    rgba(var(--dynamic-primary), 0.06),
+    rgba(var(--dynamic-secondary), 0.04),
+    rgba(var(--dynamic-accent), 0.05)
+    );
+    backdrop-filter: blur(15px); /* Reduced blur */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* More subtle border */
+    padding: var(--spacing-lg) var(--spacing-xl);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); /* Reduced shadow */
+    overflow: hidden;
+    transition: all 0.6s ease; /* Smoother transition */
+}
+
+/* --- More Subtle Hub Content Grid Container ---
+   JSX: <div className="control-hub-content glassmorphism-card"> */
+.control-hub-content.glassmorphism-card {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: var(--spacing-xl); /* Reduced gap */
+    align-items: center;
+    height: 100%;
+    position: relative;
+    background: rgba(255, 255, 255, 0.03); /* Much more subtle */
+    backdrop-filter: blur(10px); /* Reduced blur */
+    border-radius: var(--border-radius-lg); /* Smaller radius */
+    padding: var(--spacing-lg); /* Reduced padding */
+    border: 1px solid rgba(255, 255, 255, 0.06); /* Subtle border */
+    box-shadow: none; /* Remove inner shadow */
+}
+
+/* --- Subtle Background Overlays --- */
+.dynamic-background-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 25% 50%,
+    rgba(var(--dynamic-primary), 0.08) 0%,
+    transparent 70%),
+    radial-gradient(circle at 75% 50%,
+            rgba(var(--dynamic-accent), 0.06) 0%,
+            transparent 70%);
+    border-radius: var(--border-radius-lg);
+    animation: subtleBackgroundPulse 8s ease-in-out infinite; /* Slower, more subtle */
+}
+
+.dynamic-gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg,
+    rgba(var(--dynamic-secondary), 0.04) 0%,
+    transparent 50%,
+    rgba(var(--dynamic-primary), 0.03) 100%);
+    border-radius: var(--border-radius-lg);
+}
+
+@keyframes subtleBackgroundPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+}
+
+/* --- Enhanced Album Artwork Section ---
+   JSX: <div className="album-artwork-enhanced-container"> */
+.album-artwork-enhanced-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+}
+
+.album-glow-ring {
+    position: absolute;
+    inset: -15px;
+    border-radius: 50%;
+    background: conic-gradient(
+            from 0deg,
+            rgba(var(--dynamic-primary), 0.8),
+            rgba(var(--dynamic-secondary), 0.8),
+            rgba(var(--dynamic-accent), 0.8),
+            rgba(var(--dynamic-primary), 0.8)
+    );
+    animation: rotate 12s linear infinite;
+    filter: blur(12px);
+    opacity: 0.8;
+}
+
+.album-artwork-hub.enhanced {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    transition: all 0.4s ease;
+}
+
+.album-artwork-hub.enhanced:hover {
+    transform: scale(1.05);
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6);
+}
+
+.artwork-image-hub.enhanced {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.8s ease;
+    filter: brightness(1.1) contrast(1.15) saturate(1.1);
+}
+
+.artwork-image-hub.enhanced.playing {
+    animation: rotate 25s linear infinite;
+    transform-origin: center center; /* Ensure center rotation */
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Fix the container to ensure proper centering */
+.album-artwork-hub.enhanced {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* Reduced shadow */
+    border: 2px solid rgba(255, 255, 255, 0.15); /* Reduced border */
+    transition: all 0.4s ease;
+    display: flex; /* Add this */
+    align-items: center; /* Add this */
+    justify-content: center; /* Add this */
+}
+
+.artwork-image-hub.enhanced.loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.artwork-placeholder-hub.enhanced {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+    rgba(var(--dynamic-primary), 0.9),
+    rgba(var(--dynamic-accent), 0.9));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Circular Progress Ring ---
+   JSX: <svg className="progress-ring-overlay"> */
+.progress-ring-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    transition: all 0.3s ease;
+    opacity: 0.7;
+    pointer-events: none; /* Prevent interference with album art clicks */
+}
+
+.progress-ring-progress {
+    transition: stroke-dashoffset 0.5s ease;
+    filter: none; /* Remove the glow effect */
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* --- Enhanced Song Metadata Section ---
+   JSX: <div className="song-metadata-hub enhanced"> */
+.song-metadata-hub.enhanced {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    min-width: 0;
+    flex: 1;
+}
+
+.song-title-hub.enhanced {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--warm-white);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: linear-gradient(135deg, var(--warm-white), rgba(var(--dynamic-secondary), 1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.song-artist-hub.enhanced {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+    color: rgba(var(--dynamic-secondary), 1);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.album-name-hub.enhanced {
+    font-size: 0.95rem;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- Enhanced Key Metrics Pills ---
+   JSX: <div className="key-metrics-hub enhanced"> */
+.key-metrics-hub.enhanced {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.metric-pill.enhanced {
+    background: rgba(var(--dynamic-primary), 0.12); /* Much more subtle */
+    border: 1px solid rgba(var(--dynamic-primary), 0.2);
+    border-radius: var(--border-radius-md); /* Smaller radius */
+    padding: var(--spacing-xs) var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 0.8rem;
+    backdrop-filter: blur(5px); /* Less blur */
+    transition: all 0.2s ease;
+    box-shadow: none; /* Remove shadow */
+}
+
+.metric-pill.enhanced:hover {
+    background: rgba(var(--dynamic-primary), 0.18);
+    transform: none; /* Remove the lift effect */
+}
+
+.metric-pill.enhanced.energy {
+    border-color: rgba(255, 193, 7, 0.6);
+    background: rgba(255, 193, 7, 0.2);
+}
+
+.metric-pill.enhanced.tempo {
+    border-color: rgba(var(--dynamic-accent), 0.6);
+    background: rgba(var(--dynamic-accent), 0.2);
+}
+
+.metric-pill.enhanced.mood {
+    border-color: rgba(76, 175, 80, 0.6);
+    background: rgba(76, 175, 80, 0.2);
+}
+
+.metric-icon {
+    font-size: 1rem;
+}
+
+.metric-label.enhanced {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.metric-value.enhanced {
+    color: var(--warm-white);
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+
+/* ===============================================
+   ENHANCED COMPACT PLAYER CONTROLS
+   JSX: <div className="playback-controls-hub enhanced">
+        <div className="compact-player-hub enhanced">
+   =============================================== */
+.playback-controls-hub.enhanced {
+    min-width: 380px;
+}
+
+.compact-player-hub.enhanced {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    min-width: 350px;
+    background: rgba(255, 255, 255, 0.02); /* Much more subtle */
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    backdrop-filter: blur(8px); /* Less blur */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: none; /* Remove inner shadow */
+}
+
+/* --- Enhanced Progress Bar Section ---
+   JSX: <div className="progress-section enhanced"> */
+.progress-section.enhanced {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.time-display.enhanced {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+    min-width: 40px;
+    text-align: center;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.progress-bar-hub.enhanced {
+    flex: 1;
+    height: 10px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.progress-bar-hub.enhanced:hover {
+    height: 12px;
+    box-shadow: 0 0 15px rgba(var(--dynamic-accent), 0.4);
+}
+
+.progress-track-enhanced {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.progress-fill-hub.enhanced {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg,
+    rgba(var(--dynamic-primary), 0.9),
+    rgba(var(--dynamic-accent), 0.9));
+    border-radius: 5px;
+    transition: width 0.2s ease;
+    box-shadow: 0 0 10px rgba(var(--dynamic-accent), 0.5);
+}
+
+.progress-thumb-enhanced {
+    position: absolute;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    background: rgba(var(--dynamic-accent), 1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    transition: left 0.2s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* --- Enhanced Control Buttons Section ---
+   JSX: <div className="control-buttons-hub enhanced"> */
+.control-buttons-hub.enhanced {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.control-btn-hub.enhanced {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1.2rem;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+}
+
+.control-btn-hub.primary.enhanced {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg,
+    rgba(var(--dynamic-primary), 0.9),
+    rgba(var(--dynamic-accent), 0.9));
+    color: white;
+    box-shadow: 0 6px 20px rgba(var(--dynamic-primary), 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.control-btn-hub.primary.enhanced:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(var(--dynamic-primary), 0.6);
+}
+
+.control-btn-hub.secondary.enhanced {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: var(--warm-white);
+}
+
+.control-btn-hub.secondary.enhanced:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(var(--dynamic-accent), 0.6);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(var(--dynamic-accent), 0.3);
+}
+
+.btn-ripple {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.4s ease;
+}
+
+.control-btn-hub.enhanced:active .btn-ripple {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ===============================================
+   ENHANCED VOLUME & SPEED CONTROLS
+   JSX: <div className="volume-control-container enhanced">
+        <div className="speed-control-container enhanced">
+   =============================================== */
+.volume-control-container.enhanced, .speed-control-container.enhanced {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.volume-btn.enhanced, .speed-btn.enhanced {
+    font-size: 1rem !important;
+    min-width: 44px;
+}
+
+.speed-btn.enhanced span {
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* --- Enhanced Volume Slider Panel ---
+   JSX: <div className="volume-slider-container enhanced"> */
+.volume-slider-container.enhanced {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(var(--dynamic-primary), 0.9);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    min-width: 140px;
+}
+
+.volume-slider.enhanced {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    cursor: pointer;
+}
+
+.volume-slider.enhanced::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(var(--dynamic-accent), 1);
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.volume-percentage {
+    text-align: center;
+    font-size: 0.85rem;
+    color: white;
+    font-weight: 600;
+}
+
+/* --- Enhanced Speed Menu Panel ---
+   JSX: <div className="speed-menu enhanced"> */
+.speed-menu.enhanced {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(var(--dynamic-primary), 0.9);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    min-width: 90px;
+}
+
+.speed-option.enhanced {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: white;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.speed-option.enhanced:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+.speed-option.enhanced.active {
+    background: rgba(var(--dynamic-accent), 0.9);
+    border-color: rgba(var(--dynamic-accent), 1);
+    box-shadow: 0 2px 8px rgba(var(--dynamic-accent), 0.4);
+}
+
+
+/* ===============================================
+   ENHANCED HUB NAVIGATION ACTIONS
+   JSX: <div className="hub-actions enhanced">
+   =============================================== */
+.hub-actions.enhanced {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    align-items: flex-end;
+}
+
+/* --- Enhanced Back Navigation Button ---
+   JSX: <button className="back-nav-hub enhanced"> */
+.back-nav-hub.enhanced {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: var(--warm-white);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.back-nav-hub.enhanced:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(var(--dynamic-accent), 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(var(--dynamic-accent), 0.3);
+}
+
+/* --- Enhanced Analysis Mode Toggle ---
+   JSX: <div className="analysis-mode-toggle-hub enhanced"> */
+.analysis-mode-toggle-hub.enhanced {
+    display: flex;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: var(--border-radius-lg);
+    padding: 6px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mode-btn-hub.enhanced {
+    background: none;
+    border: none;
+    color: var(--warm-white);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.mode-btn-hub.enhanced.active {
+    background: rgba(var(--dynamic-primary), 0.8);
+    color: white;
+    box-shadow: 0 2px 10px rgba(var(--dynamic-primary), 0.4);
+}
+
+.mode-btn-hub.enhanced:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ===============================================
+   ZONE 2: ANALYSIS CANVAS (MIDDLE 60%)
+   JSX: <div className="analysis-canvas">
+   =============================================== */
+.analysis-canvas {
+    flex: 1;
+    height: 60vh;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    min-height: 0;
+}
+
+/* --- Sidebar Navigation ---
+   JSX: <div className="analysis-sidebar-nav"> */
+.analysis-sidebar-nav {
+    background: var(--glass-bg);
+    border-right: 1px solid var(--glass-border);
+    padding: var(--spacing-lg) var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    background: none;
+    border: none;
+    color: var(--subtle-gray);
+    padding: var(--spacing-md) var(--spacing-sm);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    min-height: 60px;
+}
+
+.nav-item:hover {
+    background: var(--hover-overlay);
+    color: var(--warm-white);
+    transform: translateX(4px);
+}
+
+.nav-item.active {
+    background: var(--electric-purple);
+    color: var(--warm-white);
+    box-shadow: var(--glow-purple);
+}
+
+.nav-item.active::before {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 24px;
+    background: var(--cyan-accent);
+    border-radius: 2px;
+}
+
+.nav-icon {
+    font-size: 1.5rem;
+}
+
+.nav-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* --- Main Canvas Container ---
+   JSX: <div className="main-canvas"> */
+.main-canvas {
+    background: var(--deep-space-blue);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Canvas Header ---
+   JSX: <div className="canvas-header"> */
+.canvas-header {
+    background: var(--glass-bg);
+    border-bottom: 1px solid var(--glass-border);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.canvas-title {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--warm-white);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+/* --- Contextual Toolbar ---
+   JSX: <div className="contextual-toolbar"> */
+.contextual-toolbar {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.chart-type-selector-hub {
+    display: flex;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-md);
+    padding: 4px;
+}
+
+.chart-btn-hub {
+    background: none;
+    border: none;
+    color: var(--warm-white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+}
+
+.chart-btn-hub:hover {
+    background: var(--hover-overlay);
+}
+
+.chart-btn-hub.active {
+    background: var(--electric-purple);
+    box-shadow: var(--glow-purple);
+}
+
+.action-btn-hub {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.action-btn-hub.primary {
+    background: var(--cyan-accent);
+    color: var(--deep-space-blue);
+}
+
+.action-btn-hub.primary:hover {
+    background: #0891b2;
+    transform: translateY(-2px);
+    box-shadow: var(--glow-cyan);
+}
+
+.action-btn-hub.secondary {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--warm-white);
+}
+
+.action-btn-hub.secondary:hover {
+    background: var(--hover-overlay);
+    border-color: var(--cyan-accent);
+}
+
+/* --- Canvas Content Area ---
+   JSX: <div className="canvas-content"> */
+.canvas-content {
+    flex: 1;
+    padding: var(--spacing-xl);
+    overflow-y: auto;
+    position: relative;
+}
+
+/* ===============================================
+   CONTENT SECTIONS (TABS)
+   JSX: Various content divs based on active tab
+   =============================================== */
+
+/* --- Overview Content ---
+   JSX: <div className="overview-content"> */
+.overview-content, .waveform-content, .insights-content, .compare-content {
+    height: 100%;
+}
+
+/* --- Chart Section ---
+   JSX: <div className="chart-section"> */
+.chart-section {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    height: 500px;
+    box-shadow: var(--shadow-md);
+}
+
+/* --- Waveform Content ---
+   JSX: <div className="waveform-content"> */
+.waveform-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+/* ===============================================
+   FEATURES TAB CONTENT
+   JSX: <div className="features-content">
+        <div className="features-grid-studio">
+   =============================================== */
+.features-grid-studio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    height: 100%;
+    overflow: visible;
+    padding-top: var(--spacing-xxl); /* Space for tooltips */
+}
+
+.features-content {
+    height: 100%;
+    overflow: visible;
+    padding-top: var(--spacing-xxl); /* Space for tooltips */
+}
+
+/* --- Individual Feature Cards ---
+   JSX: <div className="feature-card-studio"> */
+.feature-card-studio {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+}
+
+.feature-card-studio:hover {
+    background: var(--hover-overlay);
+    border-color: var(--cyan-accent);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* --- Feature Card Header ---
+   JSX: <div className="feature-header-studio"> */
+.feature-header-studio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.feature-name-studio {
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    color: var(--warm-white);
+}
+
+.feature-value-studio {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--cyan-accent);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* --- Feature Progress Bar ---
+   JSX: renderFeatureBar() function creates these */
+.feature-bar-container {
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: var(--spacing-md);
+    border: 1px solid var(--glass-border);
+}
+
+.feature-bar {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.4s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* --- Feature Tooltip ---
+   JSX: <div className="feature-tooltip-studio"> */
+.feature-tooltip-studio {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--deep-space-blue);
+    color: var(--warm-white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    font-size: 0.8rem;
+    max-width: 280px;
+    text-align: center;
+    box-shadow: var(--shadow-xl);
+    z-index: 1000;
+    margin-bottom: var(--spacing-xs);
+    border: 1px solid var(--glass-border);
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.feature-tooltip-studio::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-color: var(--deep-space-blue);
+}
+
+/* ===============================================
+   COMPARE TAB PLACEHOLDER
+   JSX: <div className="compare-content">
+        <div className="compare-placeholder">
+   =============================================== */
+.compare-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compare-placeholder {
+    text-align: center;
+    max-width: 400px;
+}
+
+.compare-icon {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.6;
+}
+
+.compare-placeholder h3 {
+    margin: 0 0 var(--spacing-md) 0;
+    color: var(--cyan-accent);
+    font-size: 1.5rem;
+}
+
+.compare-placeholder p {
+    margin: 0 0 var(--spacing-xl) 0;
+    color: var(--subtle-gray);
+    line-height: 1.6;
+}
+
+.start-comparison-btn {
+    background: linear-gradient(135deg, var(--electric-purple), var(--cyan-accent));
+    color: var(--warm-white);
+    border: none;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.start-comparison-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ===============================================
+   ZONE 3: INSIGHTS & ACTIONS BAR (BOTTOM 20%)
+   JSX: <div className="insights-actions-bar">
+        <div className="insights-actions-content">
+   =============================================== */
+.insights-actions-bar {
+    height: 20vh;
+    min-height: 80px;
+    max-height: 120px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--glass-border);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.insights-actions-content {
+    max-width: 1600px;
+    margin: 0 auto;
+    height: 100%;
+    padding: var(--spacing-md) var(--spacing-xl);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+/* --- Smart Insights Section ---
+   JSX: <div className="smart-insights"> */
+.smart-insights {
+    display: flex;
+    gap: var(--spacing-lg);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.smart-insights::-webkit-scrollbar {
+    display: none;
+}
+
+.insight-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-sm) var(--spacing-md);
+    white-space: nowrap;
+    font-size: 0.85rem;
+    min-width: fit-content;
+    flex-shrink: 0;
+}
+
+.insight-icon {
+    font-size: 1rem;
+}
+
+.insight-text {
+    color: var(--warm-white);
+    font-weight: 500;
+}
+
+/* --- Quick Actions Section ---
+   JSX: <div className="quick-actions-compact"> */
+.quick-actions-compact {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-shrink: 0;
+}
+
+.quick-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-md);
+    color: var(--warm-white);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1.1rem;
+}
+
+.quick-action-btn:hover {
+    background: var(--hover-overlay);
+    border-color: var(--cyan-accent);
+    transform: translateY(-2px);
+    box-shadow: var(--glow-cyan);
+}
+
+/* ===============================================
+   LOADING STATES
+   JSX: <div className="loading-overlay">
+   =============================================== */
+.loading-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(11, 20, 38, 0.9);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+.loading-content {
+    text-align: center;
+    max-width: 300px;
+}
+
+.loading-spinner-studio {
+    width: 60px;
+    height: 60px;
+    border: 4px solid var(--glass-border);
+    border-top: 4px solid var(--cyan-accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto var(--spacing-lg);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--glass-bg);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: var(--spacing-md);
+    border: 1px solid var(--glass-border);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--electric-purple), var(--cyan-accent));
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* ===============================================
+   NO SONG STATE
+   JSX: <div className="no-song-container">
+   =============================================== */
+.no-song-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: var(--spacing-lg);
+    background: var(--deep-space-blue);
+    color: var(--warm-white);
+}
+
+.no-song-icon {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.5;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: var(--cyan-accent);
+    color: var(--deep-space-blue);
+    border: none;
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.back-button:hover {
+    background: #0891b2;
+    transform: translateY(-2px);
+    box-shadow: var(--glow-cyan);
+}
+
+/* ===============================================
+   RESPONSIVE DESIGN
+   =============================================== */
+@media (max-width: 1200px) {
+    .control-hub-content {
+        grid-template-columns: auto 1fr auto;
+        gap: var(--spacing-lg);
+    }
+
+    .hub-actions {
+        display: none;
+    }
+
+    .compact-player-hub {
+        min-width: 280px;
+    }
+
+    .features-grid-studio {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .analysis-studio {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .audio-control-hub {
+        height: 15vh;
+        min-height: 100px;
+    }
+
+    .analysis-canvas {
+        height: 70vh;
+        grid-template-columns: 1fr;
+    }
+
+    .insights-actions-bar {
+        height: 15vh;
+        min-height: 60px;
+    }
+
+    .analysis-sidebar-nav {
+        flex-direction: row;
+        padding: var(--spacing-sm);
+        border-right: none;
+        border-bottom: 1px solid var(--glass-border);
+        overflow-x: auto;
+    }
+
+    .nav-item {
+        min-width: 60px;
+        min-height: 50px;
+    }
+
+    .nav-label {
+        display: none;
+    }
+
+    .control-hub-content {
+        grid-template-columns: auto 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .insights-actions-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .smart-insights {
+        justify-content: center;
+        gap: var(--spacing-md);
+    }
+
+    .quick-actions-compact {
+        justify-content: center;
+        margin-top: var(--spacing-sm);
+    }
+
+    .compact-player-hub {
+        min-width: 250px;
+    }
+
+    .control-buttons-hub {
+        gap: var(--spacing-sm);
+    }
+
+    .control-btn-hub.primary {
+        width: 42px;
+        height: 42px;
+    }
+
+    .control-btn-hub.secondary {
+        width: 32px;
+        height: 32px;
+    }
+
+    .features-grid-studio {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .audio-control-hub {
+        padding: var(--spacing-md);
+    }
+
+    .album-artwork-hub {
+        width: 60px;
+        height: 60px;
+    }
+
+    .song-title-hub {
+        font-size: 1.2rem;
+    }
+
+    .song-artist-hub {
+        font-size: 1rem;
+    }
+
+    .key-metrics-hub {
+        flex-wrap: wrap;
+    }
+
+    .canvas-content {
+        padding: var(--spacing-md);
+    }
+
+    .insights-actions-bar {
+        min-height: 100px;
+    }
+
+    .insight-item {
+        font-size: 0.8rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .quick-action-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+}

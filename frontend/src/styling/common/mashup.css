@@ -1,0 +1,184 @@
+.mashup-creator {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+.song-selectors {
+    display: flex;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+.song-selector {
+    flex: 1;
+    min-width: 300px;
+    padding: var(--spacing-lg);
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.song-selector h2 {
+    margin-bottom: var(--spacing-md);
+}
+
+.song-selector select {
+    width: 100%;
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--on-surface);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius-sm);
+}
+
+.selected-song {
+    margin-top: var(--spacing-md);
+}
+
+.mashup-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.crossfade-control {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex: 1;
+}
+
+.crossfade-control input[type="range"] {
+    flex: 1;
+}
+
+.analyze-button, .create-button {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.analyze-button {
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+}
+
+.analyze-button:hover:not(:disabled) {
+    background-color: #7c4dff;
+}
+
+.create-button {
+    background-color: var(--secondary-color);
+    color: var(--on-secondary);
+}
+
+.create-button:hover:not(:disabled) {
+    background-color: #04f7e0;
+}
+
+.compatibility-results {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.compatibility-score {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.score-meter {
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    margin-bottom: var(--spacing-sm);
+}
+
+.score-fill {
+    height: 100%;
+    background-color: var(--secondary-color);
+    transition: width 0.5s ease;
+}
+
+.compatibility-details {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.detail-item {
+    flex: 1;
+    min-width: 200px;
+    padding: var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius-sm);
+}
+
+.song-details {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.song-detail {
+    flex: 1;
+    min-width: 200px;
+    padding: var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius-sm);
+}
+
+.recommendations {
+    padding: var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius-sm);
+    border-left: 3px solid var(--info-color);
+}
+
+.mashup-result {
+    padding: var(--spacing-lg);
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.mashup-player {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.mashup-audio {
+    width: 100%;
+    margin: var(--spacing-md) 0;
+}
+
+.back-button {
+    display: block;
+    margin: var(--spacing-xl) auto 0;
+    background-color: transparent;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    padding: var(--spacing-sm) var(--spacing-xl);
+    border-radius: var(--border-radius-md);
+    transition: all 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: rgba(3, 218, 198, 0.1);
+}

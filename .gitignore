@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# Node / Vite
+node_modules/
+dist/
+.vite/
+*.log
+npm-debug.log*
+
+# User-generated audio (would blow up the repo)
+backend/uploads/
+
+# Local data (JSON "database" + lyric cache + state)
+backend/data/songs.json
+backend/data/playlists.json
+backend/data/mashups.json
+backend/data/transitions.json
+backend/data/playlist_transitions.json
+backend/data/users.json
+backend/data/ratings.json
+backend/data/lyrics_cache/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
