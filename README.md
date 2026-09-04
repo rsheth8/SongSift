@@ -1,20 +1,23 @@
-# SongSift
-
 <p align="center">
-  <img src="docs/brand/logo.png" width="168" alt="SongSift">
+  <img src="docs/brand/logo.png" width="128" alt="SongSift">
 </p>
 
+<h1 align="center">SongSift</h1>
 
-Local music workbench: drop in your own audio, get feature-based recs, a similarity map, beat-matched mashups, and lyric sentiment — computed on your machine.
+<p align="center">
+  Your library, actually listened to — recs, maps, mashups, on your machine.
+</p>
 
-| | |
-| --- | --- |
-| **Author** | [Rahil Sheth](https://github.com/rsheth8) |
-| **Repo** | [rsheth8/SongSift](https://github.com/rsheth8/SongSift) |
-| **Stack** | Python (Flask, librosa, scikit-learn, NetworkX), React 18, Vite, TypeScript |
-| **Status** | Local-only. You supply the files; analysis stays on disk. |
+<p align="center">
+  <a href="https://github.com/rsheth8/SongSift">Source</a>&nbsp;·&nbsp;<a href="CONTRIBUTING.md">Run locally</a>
+</p>
 
-Logs and a few backend modules still say “TuneSift” (old name). Same app.
+<p align="center">
+  <img alt="Python" src="https://img.shields.io/badge/Python-librosa-3776AB?style=flat-square">
+  <img alt="React" src="https://img.shields.io/badge/React-Vite-61DAFB?style=flat-square&logo=react&logoColor=black">
+</p>
+
+<p align="center"><sub>Local-only. You bring the files; nothing streams out.</sub></p>
 
 ---
 
