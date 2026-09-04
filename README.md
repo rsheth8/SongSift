@@ -1,8 +1,15 @@
 # SongSift
 
-**A local music analysis workbench: upload your own audio files and get recommendations, auto-generated playlists, a song similarity map, AI mashups, and lyric sentiment analysis — all computed on your machine.**
+Local music workbench: drop in your own audio, get feature-based recs, a similarity map, beat-matched mashups, and lyric sentiment — computed on your machine.
 
-> Note: internally several backend modules and log messages refer to the project as "TuneSift" (an earlier name). It's the same codebase — no separate product.
+| | |
+| --- | --- |
+| **Author** | [Rahil Sheth](https://github.com/rsheth8) |
+| **Repo** | [rsheth8/SongSift](https://github.com/rsheth8/SongSift) |
+| **Stack** | Python (Flask, librosa, scikit-learn, NetworkX), React 18, Vite, TypeScript |
+| **Status** | Local-only. You supply the files; analysis stays on disk. |
+
+Logs and a few backend modules still say “TuneSift” (old name). Same app.
 
 ---
 
