@@ -1,5 +1,10 @@
 # SongSift
 
+<p align="center">
+  <img src="docs/brand/logo.png" width="168" alt="SongSift">
+</p>
+
+
 Local music workbench: drop in your own audio, get feature-based recs, a similarity map, beat-matched mashups, and lyric sentiment — computed on your machine.
 
 | | |
@@ -199,3 +204,10 @@ Supported audio formats: `.mp3`, `.wav`, `.ogg`, `.flac`, `.m4a`. Max upload siz
 - **Deterministic song IDs.** Each song's ID is an MD5 hash of its lowercased `title_artist` string, so re-uploading the same file updates the existing record instead of creating a duplicate.
 - **Minimal, session-based auth.** User registration/login exists mainly to attribute ratings to a user ID for the collaborative-filtering recommender; sessions are Flask's built-in cookie session, with no JWT/HTTPS hardening — fine for local use, not production-ready as-is.
 - **No streaming uploads.** Files are fully buffered to disk before processing, which is part of why upload size is capped at 50 MB.
+
+## Contributing
+
+PRs and issues welcome. How to run tests, env vars, and the expected layout: [CONTRIBUTING.md](CONTRIBUTING.md).
+
+Don't commit `.env`, API keys, or personal recordings.
+
